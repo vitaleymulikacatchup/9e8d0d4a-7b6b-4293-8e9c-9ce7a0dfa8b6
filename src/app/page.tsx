@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingOverlay from '@/components/navbar/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
 import HeroBillboard from '@/components/sections/hero/HeroBillboard';
 import AboutPhoneTimeline from '@/components/sections/about/AboutPhoneTimeline';
@@ -13,11 +14,22 @@ import SocialProofOne from '@/components/sections/socialProof/SocialProofOne';
 import FaqDouble from '@/components/sections/faq/FaqDouble';
 import ContactCenter from '@/components/sections/contact/ContactCenter';
 import FooterSocial from '@/components/sections/footer/FooterSocial';
-import { Crown, DollarSign, Facebook, Globe, Handshake, HelpCircle, Instagram, Linkedin, MapPin, MessageCircle, Plane, Send, Star, TrendingUp, Twitter, Users, Youtube } from 'lucide-react';
+import { Crown, DollarSign, Facebook, Globe, Handshake, HelpCircle, Instagram, Linkedin, MapPin, MessageCircle, Plane, Send, Star, TrendingUp, Twitter, Users, Youtube, Award, Heart } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <>
+    <ThemeProvider
+      defaultButtonVariant="text-stagger"
+      defaultTextAnimation="background-highlight"
+      borderRadius="rounded"
+      contentWidth="small"
+      sizing="medium"
+      background="circleGradient"
+      cardStyle="layered-gradient"
+      primaryButtonStyle="gradient"
+      secondaryButtonStyle="radial-glow"
+      showBlurBottom={true}
+    >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingOverlay
           navItems={[
@@ -81,21 +93,21 @@ export default function LandingPage() {
           animationType="slide-up"
           features={[
             {
-              id: "1",
+              id: 1,
               title: "Expert Local Guides",
               description: "Our certified local guides provide authentic cultural insights and hidden gem discoveries that transform your journey into an immersive adventure",
               imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34kFQ1mvageIxtFsoHwjFOCooyh/uploaded-1763714029024-abqmrh0k.jpg",
               imageAlt: "Local guide showing cultural sites"
             },
             {
-              id: "2",
+              id: 2,
               title: "24/7 Travel Support",
               description: "Round-the-clock assistance ensures your peace of mind with dedicated travel consultants available whenever you need support during your adventure",
               imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34kFQ1mvageIxtFsoHwjFOCooyh/uploaded-1763714026839-7u27wg9o.jpg",
               imageAlt: "Travel support team helping customers"
             },
             {
-              id: "3",
+              id: 3,
               title: "Customized Itineraries",
               description: "Tailored travel experiences designed around your preferences, budget, and dreams to create the perfect personalized adventure",
               imageSrc: "https://webuild-dev.s3.eu-north-1.amazonaws.com/users/user_34kFQ1mvageIxtFsoHwjFOCooyh/uploaded-1763714027972-lmkelmbf.jpg",
@@ -248,14 +260,14 @@ export default function LandingPage() {
               value: "15",
               title: "Years Experience",
               description: "Decades of expertise in crafting exceptional travel experiences",
-              icon: Users
+              icon: Award
             },
             {
               id: "4",
               value: "98%",
               title: "Satisfaction Rate",
               description: "Customer satisfaction rating based on verified reviews",
-              icon: Users
+              icon: Heart
             }
           ]}
         />
@@ -487,6 +499,6 @@ export default function LandingPage() {
           ]}
         />
       </div>
-    </>
+    </ThemeProvider>
   );
 }

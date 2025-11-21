@@ -3,7 +3,6 @@ import { Prata } from "next/font/google";
 import "./globals.css";
 import { PostHogWrapper } from "@/components/PostHogWrapper";
 import Tag from "@/tag/Tag";
-import ThemeProvider from "@/providers/themeProvider/ThemeProvider";
 
 const prata = Prata({
   variable: "--font-prata",
@@ -51,20 +50,7 @@ export default function RootLayout({
       <PostHogWrapper>
         <body className={`${prata.variable} antialiased`}>
           <Tag />
-          <ThemeProvider
-            defaultButtonVariant="text-stagger"
-            defaultTextAnimation="background-highlight"
-            borderRadius="rounded"
-            contentWidth="small"
-            sizing="medium"
-            background="circleGradient"
-            cardStyle="layered-gradient"
-            primaryButtonStyle="gradient"
-            secondaryButtonStyle="radial-glow"
-            showBlurBottom={true}
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         
         <script
           dangerouslySetInnerHTML={{
